@@ -16,7 +16,7 @@ namespace HW_ApiWinForms
     public partial class MainForm : Form
     {
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        public static extern int MessageBox(int hWnd, string text, string caption, uint type);
+        public static extern int MessageBox(IntPtr hWnd, string text, string caption, uint type);
 
         [DllImport("user32.dll", SetLastError = true)]
         static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
@@ -42,6 +42,7 @@ namespace HW_ApiWinForms
         public MainForm()
         {
             InitializeComponent();
+            MessageBox(IntPtr.Zero, "Hi pookie", "caption", 1); // for type in message box docs
             caption = this.Text;
         }
 
@@ -81,9 +82,6 @@ namespace HW_ApiWinForms
                     MessageBeep(0);
                 Thread.Sleep(1000); 
                 #endregion
-
-
-
             }
             BeepButton.Enabled=true;
         }
