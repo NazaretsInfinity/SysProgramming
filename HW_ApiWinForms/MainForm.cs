@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -35,14 +37,15 @@ namespace HW_ApiWinForms
 
 
         static uint WM_CLOSE = 0x0010; // look up in Windows Notifications docs
-        static uint WM_SETTEXT = 0x000C; // and this one in  Windows Messages    
+        static uint WM_SETTEXT = 0x000C; // and this one in  Windows Messages
+        static uint WM_SETFONT = 0x0030;
 
         public static string caption; // 'for renaming
 
         public MainForm()
         {
             InitializeComponent();
-            MessageBox(IntPtr.Zero, "Hi pookie", "caption", 1); // for type in message box docs
+            MessageBox(IntPtr.Zero, "Hi pookie", "caption", 1); // checked( for type of message box) 
             caption = this.Text;
         }
 
@@ -84,6 +87,13 @@ namespace HW_ApiWinForms
                 #endregion
             }
             BeepButton.Enabled=true;
+        }
+
+        private void ChangeStyleButton_Click(object sender, EventArgs e) // idk what styles, therefore font mb , it's a part of style , ye? 
+        { 
+           ChangeStyle changeStyle = new ChangeStyle();
+           changeStyle.ShowDialog();
+           BeepButton.Font = changeStyle.Font; // on sound button checked
         }
     }
 }

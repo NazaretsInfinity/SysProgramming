@@ -31,6 +31,7 @@
             this.CloseWindowButton = new System.Windows.Forms.Button();
             this.UpdateCaptionButton = new System.Windows.Forms.Button();
             this.BeepButton = new System.Windows.Forms.Button();
+            this.ChangeStyleButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CloseWindowButton
@@ -66,11 +67,23 @@
             this.BeepButton.UseVisualStyleBackColor = true;
             this.BeepButton.Click += new System.EventHandler(this.BeepButton_Click);
             // 
+            // ChangeStyleButton
+            // 
+            this.ChangeStyleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ChangeStyleButton.Location = new System.Drawing.Point(83, 305);
+            this.ChangeStyleButton.Name = "ChangeStyleButton";
+            this.ChangeStyleButton.Size = new System.Drawing.Size(269, 59);
+            this.ChangeStyleButton.TabIndex = 3;
+            this.ChangeStyleButton.Text = "Change Style";
+            this.ChangeStyleButton.UseVisualStyleBackColor = true;
+            this.ChangeStyleButton.Click += new System.EventHandler(this.ChangeStyleButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(441, 299);
+            this.ClientSize = new System.Drawing.Size(441, 403);
+            this.Controls.Add(this.ChangeStyleButton);
             this.Controls.Add(this.BeepButton);
             this.Controls.Add(this.UpdateCaptionButton);
             this.Controls.Add(this.CloseWindowButton);
@@ -85,6 +98,7 @@
         private System.Windows.Forms.Button CloseWindowButton;
         private System.Windows.Forms.Button UpdateCaptionButton;
         private System.Windows.Forms.Button BeepButton;
+        private System.Windows.Forms.Button ChangeStyleButton;
     }
 }
 
