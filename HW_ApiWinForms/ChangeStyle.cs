@@ -16,11 +16,8 @@ namespace HW_ApiWinForms
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         private static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wParam, bool lParam);
 
-        [DllImport("user32.dll", SetLastError = true)]
-        static extern IntPtr FindWindowEx(IntPtr parent, IntPtr kid, string lpClass, string Name);
-
         private const int WM_SETFONT = 0x0030;
-        public IntPtr Hfont;
+       
 
         public ChangeStyle()
         {
@@ -42,9 +39,7 @@ namespace HW_ApiWinForms
             {
                 PrivateFontCollection fontscol = new PrivateFontCollection();
                 fontscol.AddFontFile(FilePath);
-                Hfont = new Font(fontscol.Families[0], 15).ToHfont();
-                SendMessage( IntPtr.Zero ,WM_SETFONT, Hfont, true);
-                
+                SendMessage( IntPtr.Zero ,WM_SETFONT, new Font(fontscol.Families[0], 15).ToHfont(), true);     
             }
         }
     }
