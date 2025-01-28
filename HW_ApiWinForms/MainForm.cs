@@ -89,7 +89,7 @@ namespace HW_ApiWinForms
             BeepButton.Enabled=true;
         }
 
-        private void ChangeStyleButton_Click(object sender, EventArgs e) // idk what styles, therefore font mb , it's a part of style , ye? 
+        private void ChangeStyleButton_Click(object sender, EventArgs e) //4 idk what styles, therefore font mb , it's a part of style , ye? 
         { 
            ChangeStyle changeStyle = new ChangeStyle();
            changeStyle.ShowDialog();
